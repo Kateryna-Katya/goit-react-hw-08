@@ -1,0 +1,36 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  gap: 10px;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
+.container {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+.delete {
+  cursor: pointer;
+  background-color: lightgray;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  margin-right: 5px;
+  width: 70px;
+  font-size: 12px;
+  height: 30px;
+}
+.swipper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 5px;
+  display: flex;
+  gap: 5px;
+  height: 30px;
+}
+.text {
+  font-size: 12px;
+}

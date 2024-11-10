@@ -1,0 +1,15 @@
+.input {
+  box-sizing: border-box;
+  width: 230px;
+  height: 30px;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  padding: 5px;
+}
+.container {
+  width: 235px;
+}
+.title {
+  width: 150px;
+  font-size: 14px;
+}
