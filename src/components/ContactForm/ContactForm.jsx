@@ -10,26 +10,30 @@ const ContactForm = () => {
     name: "",
     number: "",
   };
-  const phoneNumberRegex =
-    /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
-
+  const phoneNumberRegex = /^[+]?[0-9]{10,13}$/;
   const AddContactSchema = Yup.object({
     name: Yup.string()
       .min(3, "Name must be at least 3 characters")
       .max(50, "Name must be less than 50 characters")
       .required("Name is required"),
     number: Yup.string()
-      .min(3, "Name must be at least 3 characters")
-      .required("Phone is required")
+      .required("Phone number is required")
       .matches(
         phoneNumberRegex,
-        "Invalid phone number. Phone must be +380XXXXXXXXX"
+        "Invalid phone number. Phone must be in the format +380XXXXXXXXX"
       ),
   });
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(addContact(values));
-    resetForm();
+    dispatch(addContact(values))
+      .unwrap()
+      .then(() => {
+        resetForm();
+      })
+      .catch((error) => {
+        console.error("Failed to add contact:", error);
+      });
   };
+
   return (
     <Formik
       initialValues={INITIAL_VALUES}
@@ -57,9 +61,13 @@ const ContactForm = () => {
             className={style.input}
             type="text"
             name="number"
-            placeholder="+38xxxxxxxxxx"
+            placeholder="+380XXXXXXXXX"
           />
-          <ErrorMessage name="number" component="span" />
+          <ErrorMessage
+            className={style.errorMessage}
+            name="number"
+            component="span"
+          />
         </label>
         <button className={style.button} type="submit">
           Add contact
@@ -68,4 +76,5 @@ const ContactForm = () => {
     </Formik>
   );
 };
+
 export default ContactForm;

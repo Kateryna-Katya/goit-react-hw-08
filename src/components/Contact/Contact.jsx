@@ -7,6 +7,11 @@ import { useDispatch } from "react-redux";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(deleteContact(id))
+      .unwrap()
+      .catch((error) => console.error("Failed to delete contact:", error));
+  };
   return (
     <li className={style.item}>
       <div className={style.container}>
@@ -19,14 +24,11 @@ const Contact = ({ id, name, number }) => {
           <p className={style.text}>{number}</p>
         </div>
       </div>
-      <button
-        className={style.delete}
-        type="button"
-        onClick={() => dispatch(deleteContact(id))}
-      >
+      <button className={style.delete} type="button" onClick={handleDelete}>
         Delete
       </button>
     </li>
   );
 };
+
 export default Contact;
