@@ -22,7 +22,7 @@ const RegistrationSchema = Yup.object({
     .required("Password is required"),
 });
 
-export const RegistrationForm = () => {
+const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
@@ -75,3 +75,4 @@ export const RegistrationForm = () => {
     </div>
   );
 };
+export default RegistrationForm;

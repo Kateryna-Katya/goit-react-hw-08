@@ -5,13 +5,15 @@ import { FaPhone } from "react-icons/fa6";
 import { IoPerson } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 
-const Contact = ({ id, name, number }) => {
+const Contact = ({ contact }) => {
   const dispatch = useDispatch();
+
   const handleDelete = () => {
-    dispatch(deleteContact(id))
+    dispatch(deleteContact(contact.id))
       .unwrap()
       .catch((error) => console.error("Failed to delete contact:", error));
   };
+
   return (
     <li className={style.item}>
       <div className={style.container}>

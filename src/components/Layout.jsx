@@ -3,9 +3,9 @@ import AppBar from "./AppBar/AppBar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="layout-container">
+    <div>
       <AppBar />
-      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <Suspense fallback={null}>{children}</Suspense>
     </div>
   );
 };

@@ -16,7 +16,7 @@ import filtersReducer from "./filters/slice.js"
 import authReducer from "./auth/slice.js";
 
 const persistAuthConfig = {
-    key: "auth",
+    key: "token",
     version: 1,
     storage,
     whitelist: ["token"],

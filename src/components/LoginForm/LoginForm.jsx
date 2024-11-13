@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/auth/operations";
+import { login } from "../../redux/auth/operations";
 import * as Yup from "yup";
 
 const INITIAL_VALUES = {
@@ -8,7 +8,7 @@ const INITIAL_VALUES = {
   password: "",
 };
 
-const LogInSchema = Yup.object({
+const logInSchema = Yup.object({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
@@ -35,7 +35,7 @@ const LoginForm = () => {
     <div>
       <Formik
         initialValues={INITIAL_VALUES}
-        validationSchema={LogInSchema}
+        validationSchema={logInSchema}
         onSubmit={handleSubmit}
       >
         <Form>

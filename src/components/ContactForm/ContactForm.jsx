@@ -1,11 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useId } from "react";
 import style from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
+  const NameId = useId();
+  const PhoneId = useId();
   const INITIAL_VALUES = {
     name: "",
     number: "",
@@ -23,11 +26,11 @@ const ContactForm = () => {
         "Invalid phone number. Phone must be in the format +380XXXXXXXXX"
       ),
   });
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values, actions) => {
     dispatch(addContact(values))
       .unwrap()
       .then(() => {
-        resetForm();
+        actions.resetForm();
       })
       .catch((error) => {
         console.error("Failed to add contact:", error);
@@ -46,6 +49,7 @@ const ContactForm = () => {
           <Field
             type="text"
             name="name"
+            id={NameId}
             className={style.input}
             placeholder="Ivan Ivanov"
           />
@@ -61,6 +65,7 @@ const ContactForm = () => {
             className={style.input}
             type="text"
             name="number"
+            id={PhoneId}
             placeholder="+380XXXXXXXXX"
           />
           <ErrorMessage

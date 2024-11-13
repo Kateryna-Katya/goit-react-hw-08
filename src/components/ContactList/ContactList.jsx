@@ -9,7 +9,9 @@ const ContactList = () => {
     <ul className={style.list}>
       {filteredContacts && filteredContacts.length > 0 ? (
         filteredContacts.map((contact) => (
-          <Contact key={contact.id} {...contact} />
+          <li key={contact.id}>
+            <Contact contact={contact} />
+          </li>
         ))
       ) : (
         <p>No contacts found.</p>
