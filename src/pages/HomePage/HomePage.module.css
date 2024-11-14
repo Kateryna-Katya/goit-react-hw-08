@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: bluevolet;
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(246, 6, 210), #362b33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /color: transparent;
+}

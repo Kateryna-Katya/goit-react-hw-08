@@ -9,7 +9,7 @@ const ContactList = () => {
     <ul className={style.list}>
       {filteredContacts && filteredContacts.length > 0 ? (
         filteredContacts.map((contact) => (
-          <li key={contact.id}>
+          <li key={contact.id} className={style.item}>
             <Contact contact={contact} />
           </li>
         ))

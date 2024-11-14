@@ -13,7 +13,7 @@ const Navigation = () => {
   };
 
   return (
-    <div>
+    <div className={style.nav}>
       <NavLink className={navigation} to="/">
         Home
       </NavLink>

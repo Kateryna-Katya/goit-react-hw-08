@@ -13,10 +13,10 @@ const UserMenu = () => {
 
   return (
     <div className={style.wrapper}>
-      <p className={style.welcome}>
-        Welcome, <span className={style.name}>{user?.name || "Guest"}</span>
-      </p>
-      <button className={style.logoutBtn} onClick={handleClick} type="button">
+      <h2 className={style.text}>
+        Welcome, <span>{user?.name || "Guest"}</span>
+      </h2>
+      <button className={style.button} onClick={handleClick} type="button">
         Logout
       </button>
     </div>

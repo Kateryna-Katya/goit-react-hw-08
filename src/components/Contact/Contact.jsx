@@ -15,21 +15,21 @@ const Contact = ({ contact }) => {
   };
 
   return (
-    <li className={style.item}>
+    <div className={style.item}>
       <div className={style.container}>
         <div className={style.swipper}>
           <IoPerson style={{ fontSize: "12px" }} />
-          <p className={style.text}>{name}</p>
+          <p className={style.text}>{contact.name}</p>
         </div>
         <div className={style.swipper}>
           <FaPhone style={{ fontSize: "12px" }} />
-          <p className={style.text}>{number}</p>
+          <p className={style.text}>{contact.number}</p>
         </div>
       </div>
       <button className={style.delete} type="button" onClick={handleDelete}>
         Delete
       </button>
-    </li>
+    </div>
   );
 };
 
