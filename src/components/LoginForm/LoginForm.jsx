@@ -41,8 +41,9 @@ const LoginForm = () => {
       >
         <Form className={style.form}>
           <label className={style.label}>
-            <span>Email:</span>
+            <span className={style.span}>Email:</span>
             <Field
+              className={style.input}
               type="text"
               name="email"
               placeholder="example.email@example.com"
@@ -51,8 +52,9 @@ const LoginForm = () => {
           </label>
 
           <label className={style.label}>
-            <span>Password:</span>
+            <span className={style.span}>Password:</span>
             <Field
+              className={style.input}
               type="password"
               name="password"
               placeholder="Your password..."

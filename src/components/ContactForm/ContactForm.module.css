@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 230px;
   gap: 10px;
+  height: auto;
 }
 .button {
   background-color: lightgray;
@@ -14,14 +15,18 @@
   font-size: 12px;
   margin: 10px auto;
   cursor: pointer;
+  height: 30px;
 }
+.button:hover {
+  background-color: darkgray;
+}
+
 .input {
   width: 200px;
   padding: 5px;
   height: 10px;
 }
 .label {
-  margin-left: 9px;
   font-size: 10px;
   padding: 10px;
 }

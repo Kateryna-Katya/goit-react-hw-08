@@ -1,0 +1,25 @@
+.link {
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.link:hover {
+  transform: scale(1.1);
+}
+
+.active {
+  color: rgb(44, 49, 47);
+  font-weight: bold;
+}
+
+.active {
+  color: rgb(178, 214, 202);
+  font-weight: bold;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

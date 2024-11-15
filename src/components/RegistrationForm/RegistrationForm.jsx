@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { register } from "../../redux/auth/operations";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import style from "./RegistrationForm.module.css";
 
 const INITIAL_VALUES = {
   name: "",
@@ -45,31 +46,40 @@ const RegistrationForm = () => {
         validationSchema={RegistrationSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <label>
-            <span>Name:</span>
-            <Field type="text" name="name" placeholder="Ivan Ivanov" />
+        <Form className={style.form}>
+          <label className={style.label}>
+            <span className={style.span}>Name:</span>
+            <Field
+              className={style.input}
+              type="text"
+              name="name"
+              placeholder="Ivan Ivanov"
+            />
             <ErrorMessage name="name" component="span" />
           </label>
-          <label>
-            <span>Email:</span>
+          <label className={style.label}>
+            <span className={style.span}>Email:</span>
             <Field
+              className={style.input}
               type="text"
               name="email"
               placeholder="example.email@example.com"
             />
             <ErrorMessage name="email" component="span" />
           </label>
-          <label>
-            <span>Password:</span>
+          <label className={style.label}>
+            <span className={style.span}>Password:</span>
             <Field
+              className={style.input}
               type="password"
               name="password"
               placeholder="Your password...."
             />
             <ErrorMessage name="password" component="span" />
           </label>
-          <button type="submit">Sign up</button>
+          <button className={style.button} type="submit">
+            Sign up
+          </button>
         </Form>
       </Formik>
     </div>
